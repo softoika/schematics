@@ -4,7 +4,8 @@
   "description": "A blank schematics",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "npm run build && jasmine src/**/*_spec.js"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [
     "schematics"
@@ -19,5 +20,10 @@
     "@types/node": "^8.0.31",
     "jasmine": "^3.3.1",
     "typescript": "~3.5.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.24",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.2.0"
   }
 }
