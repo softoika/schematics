@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "A blank schematics",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && scripts/post-build.sh",
     "test": "jest",
     "test:watch": "jest --watch",
     "lint": "eslint '**/*.ts'",
@@ -14,9 +14,9 @@
   ],
   "author": "",
   "license": "MIT",
-  "schematics": "./src/collection.json",
+  "schematics": "./dist/collection.json",
   "files": [
-    "dist"
+    "dist/**/*"
   ],
   "dependencies": {
     "@angular-devkit/core": "^8.3.20",
