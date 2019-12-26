@@ -1,0 +1,22 @@
+{
+  "$schema": "http://jsonapi.org/schema",
+  "id": "InjectableSchematics",
+  "title": "Injectable Class Options Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The prefix name of the injectable class.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the injectable class?"
+    },
+    "type": {
+      "type": "string",
+      "description": "The suffix name of the injectable class."
+    }
+  },
+  "required": ["name"]
+}

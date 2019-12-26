@@ -4,6 +4,10 @@
     "schematics": {
       "description": "A blank schematic.",
       "factory": "./schematics/index#schematics"
+    },
+    "injectable": {
+      "description": "Creates a new injectable class definition in the given or default project.",
+      "factory": "./injectable/index"
     }
   }
 }
