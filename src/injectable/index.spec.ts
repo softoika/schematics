@@ -6,7 +6,7 @@ const collectionPath = path.join(__dirname, '../collection.json');
 const runner = new SchematicTestRunner('schematics', collectionPath);
 
 describe('Injectable Schematic', () => {
-  it('works', () => {
+  it('should create injectable class files', () => {
     const options: InjectableOptions = { name: 'user', type: 'repository' };
     const tree = runner.runSchematic('injectable', options);
     const files: string[] = [...tree.files];
@@ -21,6 +21,22 @@ describe('Injectable Schematic', () => {
         '\n' +
         '  constructor() { }\n' +
         '}\n\n'
+    );
+    expect(files.includes('/user.repository.spec.ts')).toBe(true);
+    expect(tree.readContent('/user.repository.spec.ts')).toEqual(
+      "import { TestBed } from '@angular/core/testing';\n" +
+        '\n' +
+        "import { UserRepository } from './user.repository';\n" +
+        '\n' +
+        "describe('UserRepository', () => {\n" +
+        '  beforeEach(() => TestBed.configureTestingModule({}));\n' +
+        '\n' +
+        "  it('should be created', () => {\n" +
+        '    const repository: UserRepository = TestBed.get(UserRepository);\n' +
+        '    expect(repository).toBeTruthy();\n' +
+        '  });\n' +
+        '});\n' +
+        '\n'
     );
   });
 });
