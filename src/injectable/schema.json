@@ -1,5 +1,5 @@
 {
-  "$schema": "http://jsonapi.org/schema",
+  "$schema": "http://json-schema.org/schema",
   "id": "InjectableSchematics",
   "title": "Injectable Class Options Schema",
   "type": "object",
@@ -15,7 +15,8 @@
     },
     "type": {
       "type": "string",
-      "description": "The suffix name of the injectable class."
+      "description": "The suffix name of the injectable class.",
+      "default": "Service"
     }
   },
   "required": ["name"]

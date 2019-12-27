@@ -7,7 +7,8 @@
     },
     "injectable": {
       "description": "Creates a new injectable class definition in the given or default project.",
-      "factory": "./injectable/index"
+      "factory": "./injectable/index",
+      "schema": "./injectable/schema.json"
     }
   }
 }

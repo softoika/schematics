@@ -6,5 +6,5 @@ export interface InjectableOptions {
   /**
    * The suffix name of the injectable class like Service in UserService.
    */
-  type: string;
+  type?: string;
 }

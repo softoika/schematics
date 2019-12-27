@@ -9,8 +9,7 @@ describe('Injectable Schematic', () => {
   it('should create injectable class files', () => {
     const options: InjectableOptions = { name: 'user', type: 'repository' };
     const tree = runner.runSchematic('injectable', options);
-    const files: string[] = [...tree.files];
-    expect(files.includes('/user.repository.ts')).toBe(true);
+    expect(tree.files).toContain('/user.repository.ts');
     expect(tree.readContent('/user.repository.ts')).toEqual(
       "import { Injectable } from '@angular/core';\n" +
         '\n' +
@@ -22,7 +21,7 @@ describe('Injectable Schematic', () => {
         '  constructor() { }\n' +
         '}\n\n'
     );
-    expect(files.includes('/user.repository.spec.ts')).toBe(true);
+    expect(tree.files).toContain('/user.repository.spec.ts');
     expect(tree.readContent('/user.repository.spec.ts')).toEqual(
       "import { TestBed } from '@angular/core/testing';\n" +
         '\n' +
@@ -37,6 +36,24 @@ describe('Injectable Schematic', () => {
         '  });\n' +
         '});\n' +
         '\n'
+    );
+  });
+
+  it('should create files as service class without --type option', () => {
+    const options: InjectableOptions = { name: 'user' };
+    const tree = runner.runSchematic('injectable', options);
+    const files: string[] = [...tree.files];
+    expect(files).toContain('/user.service.ts');
+    expect(files).toContain('/user.service.spec.ts');
+
+    expect(tree.readContent('/user.service.ts')).toContain('UserService');
+
+    const specContent = tree.readContent('/user.service.spec.ts');
+    expect(specContent).toContain(
+      "import { UserService } from './user.service'"
+    );
+    expect(specContent).toContain(
+      'const service: UserService = TestBed.get(UserService);'
     );
   });
 });
