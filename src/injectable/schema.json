@@ -13,6 +13,12 @@
       },
       "x-prompt": "What name would you like to use for the injectable class?"
     },
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "The path at which to create the injectable class, relative to the workspace root.",
+      "visible": false
+    },
     "type": {
       "type": "string",
       "description": "The suffix name of the injectable class.",

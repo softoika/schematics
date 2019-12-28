@@ -42,9 +42,8 @@ describe('Injectable Schematic', () => {
   it('should create files as service class without --type option', () => {
     const options: InjectableOptions = { name: 'user' };
     const tree = runner.runSchematic('injectable', options);
-    const files: string[] = [...tree.files];
-    expect(files).toContain('/user.service.ts');
-    expect(files).toContain('/user.service.spec.ts');
+    expect(tree.files).toContain('/user.service.ts');
+    expect(tree.files).toContain('/user.service.spec.ts');
 
     expect(tree.readContent('/user.service.ts')).toContain('UserService');
 
@@ -54,6 +53,19 @@ describe('Injectable Schematic', () => {
     );
     expect(specContent).toContain(
       'const service: UserService = TestBed.get(UserService);'
+    );
+  });
+
+  it('should create files in the path if name is provided with path', () => {
+    const options: InjectableOptions = { name: 'foo/user', type: 'repository' };
+    const tree = runner.runSchematic('injectable', options);
+    expect(tree.files).toContain('/foo/user.repository.ts');
+    expect(tree.files).toContain('/foo/user.repository.spec.ts');
+    expect(tree.readContent('/foo/user.repository.ts')).toContain(
+      'export class UserRepository {'
+    );
+    expect(tree.readContent('/foo/user.repository.spec.ts')).toContain(
+      "import { UserRepository } from './user.repository'"
     );
   });
 });
