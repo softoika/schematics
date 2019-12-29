@@ -68,4 +68,26 @@ describe('Injectable Schematic', () => {
       "import { UserRepository } from './user.repository'"
     );
   });
+
+  it('should create files in the named directory if --flat optin is false', () => {
+    const options: InjectableOptions = {
+      name: 'user',
+      type: 'repository',
+      flat: false
+    };
+    const tree = runner.runSchematic('injectable', options);
+    expect(tree.files).toContain('/user/user.repository.ts');
+    expect(tree.files).toContain('/user/user.repository.spec.ts');
+  });
+
+  it(`should create files in the '/path/the-named-directory' if path and --flat false are provided`, () => {
+    const options: InjectableOptions = {
+      name: 'path/user',
+      type: 'repository',
+      flat: false
+    };
+    const tree = runner.runSchematic('injectable', options);
+    expect(tree.files).toContain('/path/user/user.repository.ts');
+    expect(tree.files).toContain('/path/user/user.repository.spec.ts');
+  });
 });

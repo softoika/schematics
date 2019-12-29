@@ -21,8 +21,14 @@
     },
     "type": {
       "type": "string",
-      "description": "The suffix name of the injectable class.",
-      "default": "Service"
+      "description": "The suffix name of the injectable class. (default: service)",
+      "default": "service",
+      "x-prompt": "What type would you like to use for the injectable class?"
+    },
+    "flat": {
+      "type": "boolean",
+      "description": "When true (the default), creates files at the top level of the project.",
+      "default": true
     }
   },
   "required": ["name"]

@@ -16,7 +16,11 @@ export default function(options: InjectableOptions): Rule {
   const transformedOptions = transformToParsedName(options);
   return (_tree: Tree, _context: SchematicContext) => {
     const templates = apply(url('./files'), [
-      template({ ...transformedOptions, ...strings }),
+      template({
+        ...transformedOptions,
+        'if-flat': (s: string) => (options.flat ? '' : s),
+        ...strings
+      }),
       move(transformedOptions.path || '')
     ]);
     return mergeWith(templates);

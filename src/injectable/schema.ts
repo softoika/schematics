@@ -8,4 +8,5 @@ export interface InjectableOptions {
    */
   type?: string;
   path?: string;
+  flat?: boolean;
 }
