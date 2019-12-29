@@ -20,3 +20,6 @@ plugins:
   - 'jest'
 rules:
   import/extensions: 0
+  '@typescript-eslint/no-use-before-define':
+    - error
+    - functions: false

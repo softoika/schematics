@@ -6,6 +6,7 @@
       "factory": "./schematics/index#schematics"
     },
     "injectable": {
+      "aliases": ["ij"],
       "description": "Creates a new injectable class definition in the given or default project.",
       "factory": "./injectable/index",
       "schema": "./injectable/schema.json"
