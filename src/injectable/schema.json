@@ -23,7 +23,8 @@
       "type": "string",
       "description": "The suffix name of the injectable class. (default: service)",
       "default": "service",
-      "x-prompt": "What type would you like to use for the injectable class?"
+      "x-prompt": "What type would you like to use for the injectable class?",
+      "alias": "t"
     },
     "flat": {
       "type": "boolean",
