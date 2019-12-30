@@ -11,4 +11,5 @@ export interface InjectableOptions {
   flat?: boolean;
   project?: string;
   skipTests?: boolean;
+  lintFix?: boolean;
 }

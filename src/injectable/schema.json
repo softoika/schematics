@@ -41,6 +41,11 @@
       "type": "boolean",
       "description": "When true, does not create \"spec.ts\" test file.",
       "default": false
+    },
+    "lintFix": {
+      "type": "boolean",
+      "description": "When true, applies lint fixes after generating the injectable class.",
+      "default": false
     }
   },
   "required": ["name"]

@@ -8,11 +8,13 @@ import {
   mergeWith,
   move,
   filter,
-  noop
+  noop,
+  chain
 } from '@angular-devkit/schematics';
 import { strings } from '@angular-devkit/core';
 import { parseName } from '@schematics/angular/utility/parse-name';
 import { createDefaultPath } from '@schematics/angular/utility/workspace';
+import { applyLintFix } from '@schematics/angular/utility/lint-fix';
 import { InjectableOptions } from './schema';
 
 export default function(options: InjectableOptions): Rule {
@@ -32,7 +34,11 @@ export default function(options: InjectableOptions): Rule {
       }),
       move(appliedOptions.path || '')
     ]);
-    return mergeWith(templates);
+
+    return chain([
+      mergeWith(templates),
+      options.skipTests ? applyLintFix(appliedOptions.path) : noop()
+    ]);
   };
 }
 
