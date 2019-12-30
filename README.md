@@ -1,28 +1,28 @@
-# Getting Started With Schematics
+# @softoika/schematics
 
-This repository is a basic Schematic implementation that serves as a starting point to create and publish Schematics to NPM.
+A miscellaneous schematics collection for Angular.
 
-### Testing
+- Injectable class schematic
 
-To test locally, install `@angular-devkit/schematics-cli` globally and use the `schematics` command line tool. That tool acts the same as the `generate` command of the Angular CLI, but also has a debug mode.
+The other schematics will be added soon.
 
-Check the documentation with
-```bash
-schematics --help
+## Getting started
+
+Install this package to execute the schematics
+
+```
+npm install -D @softoika/schematics
 ```
 
-### Unit Testing
+### Injectable class schematic
 
-`npm run test` will run the unit tests, using Jasmine as a runner and test framework.
-
-### Publishing
-
-To publish, simply do:
+This schematic is a service schematic that can be given any name instead of service.
+For example, the following command creates a service class as a repository.
 
 ```bash
-npm run build
-npm publish
+$ ng generate @softoika/schematics:injectable user --type repository
+# or
+$ ng g @softoika/schematics:ij user -t repository
+CREATE src/app/user.repository.spec.ts (345 bytes)
+CREATE src/app/user.repository.ts (137 bytes)
 ```
-
-That's it!
- 
