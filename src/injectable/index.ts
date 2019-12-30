@@ -6,7 +6,9 @@ import {
   template,
   url,
   mergeWith,
-  move
+  move,
+  filter,
+  noop
 } from '@angular-devkit/schematics';
 import { strings } from '@angular-devkit/core';
 import { parseName } from '@schematics/angular/utility/parse-name';
@@ -22,6 +24,7 @@ export default function(options: InjectableOptions): Rule {
     appliedOptions = applyNameParsing(appliedOptions);
 
     const templates = apply(url('./files'), [
+      options.skipTests ? filter(path => !path.endsWith('.spec.ts')) : noop(),
       template({
         ...appliedOptions,
         'if-flat': (s: string) => (options.flat ? '' : s),

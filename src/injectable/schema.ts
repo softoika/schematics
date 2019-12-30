@@ -10,4 +10,5 @@ export interface InjectableOptions {
   path?: string;
   flat?: boolean;
   project?: string;
+  skipTests?: boolean;
 }

@@ -36,6 +36,11 @@
       "$default": {
         "$source": "projectName"
       }
+    },
+    "skipTests": {
+      "type": "boolean",
+      "description": "When true, does not create \"spec.ts\" test file.",
+      "default": false
     }
   },
   "required": ["name"]

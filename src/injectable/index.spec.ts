@@ -172,7 +172,7 @@ describe('Injectable Schematic', () => {
     );
   });
 
-  it('should create files in the project root', async () => {
+  it('should create files in the custom project root', async () => {
     const config = JSON.parse(appTree.readContent('/angular.json'));
     expect(config?.projects?.bar).toBeDefined();
     config.projects.bar.sourceRoot = 'projects/bar/custom';
@@ -182,6 +182,20 @@ describe('Injectable Schematic', () => {
       .toPromise();
     expect(appTree.files).toContain(
       '/projects/bar/custom/app/user.repository.ts'
+    );
+  });
+
+  it('should not create a test file if --skipTests is true', async () => {
+    const options: InjectableOptions = {
+      ...defaultOptions,
+      skipTests: true
+    };
+    const tree = await runner
+      .runSchematicAsync('injectable', options, appTree)
+      .toPromise();
+    expect(tree.files).toContain('/projects/bar/src/app/user.repository.ts');
+    expect(tree.files).not.toContain(
+      '/projects/bar/src/app/user.repository.spec.ts'
     );
   });
 });
