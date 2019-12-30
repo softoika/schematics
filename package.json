@@ -1,7 +1,7 @@
 {
-  "name": "schematics",
-  "version": "0.0.0",
-  "description": "A blank schematics",
+  "name": "@softoika/schematics",
+  "version": "1.0.0",
+  "description": "A miscellaneous schematics collection for Angular",
   "scripts": {
     "build": "tsc -p tsconfig.json && scripts/post-build.sh",
     "test": "jest",
@@ -10,9 +10,10 @@
     "lint:fix": "eslint '**/*.ts' --quiet --fix"
   },
   "keywords": [
-    "schematics"
+    "schematics",
+    "angular"
   ],
-  "author": "",
+  "author": "Ryo Hanafusa",
   "license": "MIT",
   "schematics": "./dist/collection.json",
   "files": [
