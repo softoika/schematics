@@ -1,6 +1,6 @@
 {
   "name": "@softoika/schematics",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A miscellaneous schematics collection for Angular",
   "scripts": {
     "build": "tsc -p tsconfig.json && scripts/post-build.sh",
