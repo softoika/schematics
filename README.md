@@ -1,3 +1,6 @@
+[![Actions Status](https://github.com/softoika/schematics/workflows/Node%20CI/badge.svg)](https://github.com/softoika/schematics/actions?query=workflow%3A%22Node+CI%22)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+
 # @softoika/schematics
 
 A miscellaneous schematics collection for Angular.
@@ -17,7 +20,7 @@ npm install -D @softoika/schematics
 ### Injectable class schematic
 
 This schematic is a service schematic that can be given any name instead of service.
-For example, the following command creates a service class as a repository.
+For example, the following command creates a service class whose name is repository.
 
 ```bash
 $ ng generate @softoika/schematics:injectable user --type repository
@@ -25,4 +28,27 @@ $ ng generate @softoika/schematics:injectable user --type repository
 $ ng g @softoika/schematics:ij user -t repository
 CREATE src/app/user.repository.spec.ts (345 bytes)
 CREATE src/app/user.repository.ts (137 bytes)
+```
+
+And the other options are available.
+```
+$ ng g @softoika/schematics:injectable --help
+...
+Help for schematic @softoika/schematics:injectable
+
+arguments:
+  name
+    The prefix name of the injectable class.
+
+options:
+  --flat
+    When true (the default), creates files at the top level of the project.
+  --lint-fix
+    When true, applies lint fixes after generating the injectable class.
+  --project
+    The name of the project
+  --skip-tests
+    When true, does not create "spec.ts" test file.
+  --type (-t)
+    The suffix name of the injectable class. (default: service)
 ```
