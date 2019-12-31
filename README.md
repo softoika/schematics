@@ -1,7 +1,8 @@
+# @softoika/schematics
+
+[![npm version](https://badge.fury.io/js/%40softoika%2Fschematics.svg)](https://badge.fury.io/js/%40softoika%2Fschematics)
 [![Actions Status](https://github.com/softoika/schematics/workflows/Node%20CI/badge.svg)](https://github.com/softoika/schematics/actions?query=workflow%3A%22Node+CI%22)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
-
-# @softoika/schematics
 
 A miscellaneous schematics collection for Angular.
 
