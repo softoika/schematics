@@ -37,7 +37,7 @@ export default function(options: InjectableOptions): Rule {
 
     return chain([
       mergeWith(templates),
-      options.skipTests ? applyLintFix(appliedOptions.path) : noop()
+      options.lintFix ? applyLintFix(appliedOptions.path) : noop()
     ]);
   };
 }
