@@ -6,7 +6,7 @@
 
 A miscellaneous schematics collection for Angular.
 
-- Injectable class schematic
+- Injectable class schematic (something like service and class schematics combined)
 
 The other schematics will be added soon.
 
