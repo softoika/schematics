@@ -1,6 +1,5 @@
 import {
   Rule,
-  SchematicContext,
   Tree,
   apply,
   template,
@@ -20,7 +19,7 @@ import {
 } from '../utils/options-transformer';
 
 export default function(options: InjectableOptions): Rule {
-  return async (tree: Tree, _context: SchematicContext) => {
+  return async (tree: Tree): Promise<Rule> => {
     let appliedOptions = await applyDefaultPath<InjectableOptions>(
       options,
       tree
