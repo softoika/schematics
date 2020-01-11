@@ -6,6 +6,7 @@ import * as path from 'path';
 import { Schema as ApplicationOptions } from '@schematics/angular/application/schema';
 import { Schema as WorkspaceOptions } from '@schematics/angular/workspace/schema';
 import { InjectableOptions } from './schema';
+import { createAngularApp } from '../utils/test/create-angular-app';
 
 const appOptions: ApplicationOptions = {
   name: 'bar',
@@ -45,21 +46,7 @@ describe('Injectable Schematic', () => {
     let appTree: UnitTestTree;
 
     beforeEach(async () => {
-      appTree = await runner
-        .runExternalSchematicAsync(
-          '@schematics/angular',
-          'workspace',
-          workspaceOptions
-        )
-        .toPromise();
-      appTree = await runner
-        .runExternalSchematicAsync(
-          '@schematics/angular',
-          'application',
-          appOptions,
-          appTree
-        )
-        .toPromise();
+      appTree = await createAngularApp(runner, workspaceOptions, appOptions);
     });
 
     it('should create injectable class files', async () => {
@@ -130,29 +117,7 @@ describe('Injectable Schematic', () => {
       );
     });
 
-    it('should create files in the path if name is provided with path', async () => {
-      const options: InjectableOptions = {
-        ...defaultOptions,
-        name: 'foo/user'
-      };
-      const tree = await runner
-        .runSchematicAsync('injectable', options, appTree)
-        .toPromise();
-      expect(tree.files).toContain(
-        '/projects/bar/src/app/foo/user.repository.ts'
-      );
-      expect(tree.files).toContain(
-        '/projects/bar/src/app/foo/user.repository.spec.ts'
-      );
-      expect(
-        tree.readContent('/projects/bar/src/app/foo/user.repository.ts')
-      ).toContain('export class UserRepository {');
-      expect(
-        tree.readContent('/projects/bar/src/app/foo/user.repository.spec.ts')
-      ).toContain("import { UserRepository } from './user.repository'");
-    });
-
-    it('should create files in the named directory if --flat optin is false', async () => {
+    it('should create files in the named directory if --flat option is false', async () => {
       const options: InjectableOptions = {
         ...defaultOptions,
         flat: false
@@ -185,29 +150,6 @@ describe('Injectable Schematic', () => {
       );
     });
 
-    it('should create files in the custom project root', async () => {
-      const config = JSON.parse(appTree.readContent('/angular.json'));
-      expect(config?.projects?.bar).toBeDefined();
-      config.projects.bar.sourceRoot = 'projects/bar/custom';
-      appTree.overwrite('/angular.json', JSON.stringify(config, null, 2));
-      appTree = await runner
-        .runSchematicAsync('injectable', defaultOptions, appTree)
-        .toPromise();
-      expect(appTree.files).toContain(
-        '/projects/bar/custom/app/user.repository.ts'
-      );
-    });
-
-    it('should throw an error if --project is not passed', async () => {
-      const options = {
-        name: defaultOptions.name,
-        type: defaultOptions.type
-      };
-      await expect(
-        runner.runSchematicAsync('injectable', options, appTree).toPromise()
-      ).rejects.toThrowError('Specified project does not exist.');
-    });
-
     it('should not create a test file if --skipTests is true', async () => {
       const options: InjectableOptions = {
         ...defaultOptions,
@@ -220,47 +162,6 @@ describe('Injectable Schematic', () => {
       expect(tree.files).not.toContain(
         '/projects/bar/src/app/user.repository.spec.ts'
       );
-    });
-  });
-
-  describe('single project workspace', () => {
-    const workspaceOptions: WorkspaceOptions = {
-      name: 'workspace',
-      version: '6.0.0'
-    };
-
-    let appTree: UnitTestTree;
-
-    beforeEach(async () => {
-      appTree = await runner
-        .runExternalSchematicAsync(
-          '@schematics/angular',
-          'workspace',
-          workspaceOptions
-        )
-        .toPromise();
-      appTree = await runner
-        .runExternalSchematicAsync(
-          '@schematics/angular',
-          'application',
-          appOptions,
-          appTree
-        )
-        .toPromise();
-    });
-
-    it('should create files in default project path', async () => {
-      const config = JSON.parse(appTree.readContent('/angular.json'));
-      const options = {
-        name: defaultOptions.name,
-        type: defaultOptions.type,
-        // The defaultProject is passed implicitly to --project by Angular CLI if in a single project workspace.
-        project: config.defaultProject
-      };
-      const tree = await runner
-        .runSchematicAsync('injectable', options, appTree)
-        .toPromise();
-      expect(tree.files).toContain('/bar/src/app/user.repository.ts');
     });
   });
 });

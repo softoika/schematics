@@ -6,7 +6,7 @@ import {
   buildDefaultPath
 } from '@schematics/angular/utility/workspace';
 
-interface AngularProjectOptions {
+export interface AngularProjectOptions {
   name: string;
   path?: string;
   project?: string;
