@@ -1,7 +1,8 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "id": "InjectableSchematics",
+  "id": "SchematicsInjectableClass",
   "title": "Injectable Class Options Schema",
+  "description": "Creates a new injectable class definition in the given or default project.",
   "type": "object",
   "properties": {
     "name": {

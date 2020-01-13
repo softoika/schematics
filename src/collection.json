@@ -3,9 +3,15 @@
   "schematics": {
     "injectable": {
       "aliases": ["ij"],
-      "description": "Creates a new injectable class definition in the given or default project.",
+      "description": "Creates an injectable class.",
       "factory": "./injectable/index",
       "schema": "./injectable/schema.json"
+    },
+    "interceptor": {
+      "aliases": ["ic"],
+      "description": "Creates an interceptor.",
+      "factory": "./interceptor/index",
+      "schema": "./interceptor/schema.json"
     }
   }
 }
