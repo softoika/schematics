@@ -21,25 +21,25 @@
     "dist/**/*"
   ],
   "dependencies": {
-    "@angular-devkit/core": "^8.3.20",
-    "@angular-devkit/schematics": "^8.3.20",
-    "@schematics/angular": "^8.3.21"
+    "@angular-devkit/core": "8.3.21",
+    "@angular-devkit/schematics": "8.3.21",
+    "@schematics/angular": "8.3.21"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.24",
-    "@types/node": "^8.0.31",
-    "@typescript-eslint/eslint-plugin": "^2.12.0",
-    "@typescript-eslint/parser": "^2.12.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-import": "^2.19.1",
-    "eslint-plugin-jest": "^23.1.1",
-    "eslint-plugin-prettier": "^3.1.2",
-    "jest": "^24.9.0",
-    "prettier": "^1.19.1",
-    "ts-jest": "^24.2.0",
-    "typescript": "^3.7.4"
+    "@types/jest": "24.0.25",
+    "@types/node": "8.10.59",
+    "@typescript-eslint/eslint-plugin": "2.14.0",
+    "@typescript-eslint/parser": "2.14.0",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-config-prettier": "6.9.0",
+    "eslint-plugin-import": "2.19.1",
+    "eslint-plugin-jest": "23.2.0",
+    "eslint-plugin-prettier": "3.1.2",
+    "jest": "24.9.0",
+    "prettier": "1.19.1",
+    "ts-jest": "24.2.0",
+    "typescript": "3.7.4"
   },
   "homepage": "https://github.com/softoika/schematics",
   "repository": {
