@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/core@8.3.25":
-  version "8.3.25"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-8.3.25.tgz#8133a18be811424f10a10f37c712165b0f69f3fc"
-  integrity sha512-l7Gqy1tMrTpRmPVlovcFX8UA3mtXRlgO8kcSsbJ9MKRKNTCcxlfsWEYY5igyDBUVh6ADkgSIu0nuk31ZGTe0lw==
+"@angular-devkit/core@8.3.26":
+  version "8.3.26"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-8.3.26.tgz#a331f02603a64fe53b9527b07e04ee18c798b9a6"
+  integrity sha512-b1ng9091o33s55/cwQYh1kboiJtj8y8z8xQWATDI9kRmNIQkWYVwVa/MzgPRJ4bzbEGG3zIUHCsp52A6vuGr2A==
   dependencies:
     ajv "6.10.2"
     fast-json-stable-stringify "2.0.0"
@@ -13,12 +13,12 @@
     rxjs "6.4.0"
     source-map "0.7.3"
 
-"@angular-devkit/schematics@8.3.25":
-  version "8.3.25"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-8.3.25.tgz#692eaa0fc14bc09c315d93966c781a97ca524f77"
-  integrity sha512-/p1MkfursfLy+JRGXlJGPEmX55lrFCsR/2khWAVXZcMaFR3QlR/b6/zvB8I2pHFfr0/XWnYTT/BsF7rJjO3RmA==
+"@angular-devkit/schematics@8.3.26":
+  version "8.3.26"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-8.3.26.tgz#91fcea47279a09d7504051bec17277c07f16e03b"
+  integrity sha512-IoZbXVFGLvVi5d0ozfssWDXuzot0/pMSKbQPzWIG8K7nCo7nNMVYpsMHrEVYUikA9EQEL5LqMCGohH36/zVPcA==
   dependencies:
-    "@angular-devkit/core" "8.3.25"
+    "@angular-devkit/core" "8.3.26"
     rxjs "6.4.0"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
@@ -465,13 +465,13 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
-"@schematics/angular@8.3.25":
-  version "8.3.25"
-  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-8.3.25.tgz#11252399e30e2ddb94323e5e438bb69839fb9464"
-  integrity sha512-/vEPtE+fvgsWPml/MVqzmlGPBujadPPNwaTuuj5Uz1aVcKeEYzLkbN8YQOpml4vxZHCF8RDwNdGiU4SZg63Jfg==
+"@schematics/angular@8.3.26":
+  version "8.3.26"
+  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-8.3.26.tgz#adda1552de14126e4d0993b648b4ea6258a581ce"
+  integrity sha512-NJCykMxB9RKL+Tmr9xHftUevsivKGsQZQKjkub528wrSgwrCWoFCxGWV31iOXkT3TlBWmuibH6MZkrWbCLX4Sw==
   dependencies:
-    "@angular-devkit/core" "8.3.25"
-    "@angular-devkit/schematics" "8.3.25"
+    "@angular-devkit/core" "8.3.26"
+    "@angular-devkit/schematics" "8.3.26"
 
 "@sinonjs/commons@^1.7.0":
   version "1.7.0"
