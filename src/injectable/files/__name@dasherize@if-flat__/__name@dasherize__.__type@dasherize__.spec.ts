@@ -3,10 +3,14 @@ import { TestBed } from '@angular/core/testing';
 import { <%= classify(name) %><%= classify(type) %> } from './<%= dasherize(name) %>.<%= dasherize(type) %>';
 
 describe('<%= classify(name) %><%= classify(type) %>', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  let <%= camelize(type) %>: <%= classify(name) %><%= classify(type) %>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    <%= camelize(type) %> = TestBed.inject(<%= classify(name) %><%= classify(type) %>);
+  });
 
   it('should be created', () => {
-    const <%= camelize(type) %>: <%= classify(name) %><%= classify(type) %> = TestBed.get(<%= classify(name) %><%= classify(type) %>);
     expect(<%= camelize(type) %>).toBeTruthy();
   });
 });

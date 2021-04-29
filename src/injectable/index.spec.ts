@@ -78,10 +78,14 @@ describe('Injectable Schematic', () => {
           "import { UserRepository } from './user.repository';\n" +
           '\n' +
           "describe('UserRepository', () => {\n" +
-          '  beforeEach(() => TestBed.configureTestingModule({}));\n' +
+          '  let repository: UserRepository;\n' +
+          '\n' +
+          '  beforeEach(() => {\n' +
+          '    TestBed.configureTestingModule({});\n' +
+          '    repository = TestBed.inject(UserRepository);\n' +
+          '  });\n' +
           '\n' +
           "  it('should be created', () => {\n" +
-          '    const repository: UserRepository = TestBed.get(UserRepository);\n' +
           '    expect(repository).toBeTruthy();\n' +
           '  });\n' +
           '});\n' +
@@ -112,9 +116,7 @@ describe('Injectable Schematic', () => {
       expect(specContent).toContain(
         "import { UserService } from './user.service'"
       );
-      expect(specContent).toContain(
-        'const service: UserService = TestBed.get(UserService);'
-      );
+      expect(specContent).toContain('service = TestBed.inject(UserService);');
     });
 
     it('should create files in the named directory if --flat option is false', async () => {
