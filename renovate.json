@@ -1,6 +1,24 @@
 {
   "extends": ["config:base"],
   "timezone": "Asia/Tokyo",
-  "schedule": ["on friday"],
-  "patch": { "automerge": true }
+  "schedule": ["after 7am and before 8am on saturday"],
+  "automerge": true,
+  "major": { "automerge": false },
+  "packageRules": [
+    {
+      "groupName": "jest",
+      "matchPackageNames": ["jest", "@types/jest", "ts-jest"]
+    },
+    {
+      "groupName": "eslint and prettier",
+      "matchPackagePatterns": ["eslint"],
+      "matchPackageNames": ["prettier"]
+    },
+    {
+      "groupName": "typescript",
+      "matchPackageNames": "typescript",
+      "automerge": false,
+      "minor": { "automerge": true }
+    }
+  ]
 }
