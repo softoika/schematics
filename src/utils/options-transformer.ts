@@ -3,7 +3,7 @@ import { WorkspaceDefinition } from '@angular-devkit/core/src/workspace/definiti
 import { parseName } from '@schematics/angular/utility/parse-name';
 import {
   getWorkspace,
-  buildDefaultPath
+  buildDefaultPath,
 } from '@schematics/angular/utility/workspace';
 
 export interface AngularProjectOptions {

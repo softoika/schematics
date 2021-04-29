@@ -2,7 +2,7 @@ import { Schema as ApplicationOptions } from '@schematics/angular/application/sc
 import { Schema as WorkspaceOptions } from '@schematics/angular/workspace/schema';
 import {
   SchematicTestRunner,
-  UnitTestTree
+  UnitTestTree,
 } from '@angular-devkit/schematics/testing';
 
 // eslint-disable-next-line import/prefer-default-export

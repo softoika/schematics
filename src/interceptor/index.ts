@@ -7,17 +7,17 @@ import {
   move,
   chain,
   mergeWith,
-  noop
+  noop,
 } from '@angular-devkit/schematics';
 import { strings } from '@angular-devkit/core';
 import { applyLintFix } from '@schematics/angular/utility/lint-fix';
 import { InterceptorOptions } from './schema';
 import {
   applyDefaultPath,
-  applyNameParsing
+  applyNameParsing,
 } from '../utils/options-transformer';
 
-export default function(options: InterceptorOptions): Rule {
+export default function (options: InterceptorOptions): Rule {
   return async (tree: Tree): Promise<Rule> => {
     let appliedOptions = await applyDefaultPath(options, tree);
     appliedOptions = applyNameParsing(appliedOptions);
@@ -26,14 +26,14 @@ export default function(options: InterceptorOptions): Rule {
       template({
         ...appliedOptions,
         'if-flat': (s: string) => (options.flat ? '' : s),
-        ...strings
+        ...strings,
       }),
-      move(appliedOptions.path ?? '')
+      move(appliedOptions.path ?? ''),
     ]);
 
     return chain([
       mergeWith(templates),
-      options.lintFix ? applyLintFix(appliedOptions.path) : noop()
+      options.lintFix ? applyLintFix(appliedOptions.path) : noop(),
     ]);
   };
 }

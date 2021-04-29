@@ -1,6 +1,6 @@
 import {
   SchematicTestRunner,
-  UnitTestTree
+  UnitTestTree,
 } from '@angular-devkit/schematics/testing';
 import * as path from 'path';
 import { Schema as ApplicationOptions } from '@schematics/angular/application/schema';
@@ -13,13 +13,13 @@ const appOptions: ApplicationOptions = {
   inlineStyle: false,
   inlineTemplate: false,
   routing: false,
-  skipPackageJson: false
+  skipPackageJson: false,
 };
 
 const defaultOptions: InjectableOptions = {
   name: 'user',
   type: 'repository',
-  project: 'bar'
+  project: 'bar',
 };
 
 const collectionPath = path.join(__dirname, '../collection.json');
@@ -40,7 +40,7 @@ describe('Injectable Schematic', () => {
     const workspaceOptions: WorkspaceOptions = {
       name: 'workspace',
       newProjectRoot: 'projects',
-      version: '6.0.0'
+      version: '6.0.0',
     };
 
     let appTree: UnitTestTree;
@@ -92,7 +92,7 @@ describe('Injectable Schematic', () => {
     it('should create files as service class without --type option', async () => {
       const options: InjectableOptions = {
         name: 'user',
-        project: defaultOptions.project
+        project: defaultOptions.project,
       };
       const tree = await runner
         .runSchematicAsync('injectable', options, appTree)
@@ -120,7 +120,7 @@ describe('Injectable Schematic', () => {
     it('should create files in the named directory if --flat option is false', async () => {
       const options: InjectableOptions = {
         ...defaultOptions,
-        flat: false
+        flat: false,
       };
       const tree = await runner
         .runSchematicAsync('injectable', options, appTree)
@@ -137,7 +137,7 @@ describe('Injectable Schematic', () => {
       const options: InjectableOptions = {
         ...defaultOptions,
         name: 'path/user',
-        flat: false
+        flat: false,
       };
       const tree = await runner
         .runSchematicAsync('injectable', options, appTree)
@@ -153,7 +153,7 @@ describe('Injectable Schematic', () => {
     it('should not create a test file if --skipTests is true', async () => {
       const options: InjectableOptions = {
         ...defaultOptions,
-        skipTests: true
+        skipTests: true,
       };
       const tree = await runner
         .runSchematicAsync('injectable', options, appTree)

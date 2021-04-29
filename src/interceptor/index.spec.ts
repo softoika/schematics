@@ -1,6 +1,6 @@
 import {
   SchematicTestRunner,
-  UnitTestTree
+  UnitTestTree,
 } from '@angular-devkit/schematics/testing';
 import * as path from 'path';
 import { Schema as ApplicationOptions } from '@schematics/angular/application/schema';
@@ -12,12 +12,12 @@ const appOptions: ApplicationOptions = {
   inlineStyle: false,
   inlineTemplate: false,
   routing: false,
-  skipPackageJson: false
+  skipPackageJson: false,
 };
 
 const workspaceOptions: WorkspaceOptions = {
   name: 'workspace',
-  version: '6.0.0'
+  version: '6.0.0',
 };
 
 const collectionPath = path.join(__dirname, '../collection.json');
@@ -50,7 +50,7 @@ describe('Interceptor Schematic', () => {
         {
           name: 'foo',
           project: 'bar',
-          flat: false
+          flat: false,
         },
         appTree
       )

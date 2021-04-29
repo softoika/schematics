@@ -1,7 +1,7 @@
 import { Tree } from '@angular-devkit/schematics';
 import {
   UnitTestTree,
-  SchematicTestRunner
+  SchematicTestRunner,
 } from '@angular-devkit/schematics/testing';
 import { Schema as WorkspaceOptions } from '@schematics/angular/workspace/schema';
 import { Schema as ApplicationOptions } from '@schematics/angular/application/schema';
@@ -9,7 +9,7 @@ import * as path from 'path';
 import {
   AngularProjectOptions,
   applyDefaultPath,
-  applyNameParsing
+  applyNameParsing,
 } from './options-transformer';
 import { createAngularApp } from './test/create-angular-app';
 
@@ -35,14 +35,14 @@ describe('applyDefaultPath', () => {
   describe('in angular workspace', () => {
     const workspaceOptions: WorkspaceOptions = {
       name: 'workspace',
-      version: '6.0.0'
+      version: '6.0.0',
     };
     const appOptions: ApplicationOptions = {
       name: 'bar',
       inlineStyle: false,
       inlineTemplate: false,
       routing: false,
-      skipPackageJson: false
+      skipPackageJson: false,
     };
     let appTree: UnitTestTree;
 

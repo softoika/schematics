@@ -8,17 +8,17 @@ import {
   move,
   filter,
   noop,
-  chain
+  chain,
 } from '@angular-devkit/schematics';
 import { strings } from '@angular-devkit/core';
 import { applyLintFix } from '@schematics/angular/utility/lint-fix';
 import { InjectableOptions } from './schema';
 import {
   applyDefaultPath,
-  applyNameParsing
+  applyNameParsing,
 } from '../utils/options-transformer';
 
-export default function(options: InjectableOptions): Rule {
+export default function (options: InjectableOptions): Rule {
   return async (tree: Tree): Promise<Rule> => {
     let appliedOptions = await applyDefaultPath<InjectableOptions>(
       options,
@@ -27,18 +27,18 @@ export default function(options: InjectableOptions): Rule {
     appliedOptions = applyNameParsing<InjectableOptions>(appliedOptions);
 
     const templates = apply(url('./files'), [
-      options.skipTests ? filter(path => !path.endsWith('.spec.ts')) : noop(),
+      options.skipTests ? filter((path) => !path.endsWith('.spec.ts')) : noop(),
       template({
         ...appliedOptions,
         'if-flat': (s: string) => (options.flat ? '' : s),
-        ...strings
+        ...strings,
       }),
-      move(appliedOptions.path || '')
+      move(appliedOptions.path || ''),
     ]);
 
     return chain([
       mergeWith(templates),
-      options.lintFix ? applyLintFix(appliedOptions.path) : noop()
+      options.lintFix ? applyLintFix(appliedOptions.path) : noop(),
     ]);
   };
 }
