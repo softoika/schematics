@@ -7,9 +7,9 @@
 A miscellaneous schematics collection for Angular.
 
 - Injectable class schematic (something like service and class schematics combined)
-- Interceptor schematic
+- Interceptor schematic (**deprecated**)
 
-The other schematics will be added soon.
+The other schematics will be added.
 
 ## Getting started
 
@@ -55,7 +55,9 @@ options:
     The suffix name of the injectable class. (default: service)
 ```
 
-## Interceptor schematic
+## Interceptor schematic (**deprecated**)
+**The interceptor schematic is officially supported by angular/cli now.**
+
 This schematic creates a new generic interceptor definition that implements [HttpInterceptor](https://angular.io/api/common/http/HttpInterceptor).
 
 ```bash
