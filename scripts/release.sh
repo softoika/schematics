@@ -65,14 +65,12 @@ parse_params "$@"
 npm run build
 npm test
 version=$(npm version $version_arg)
-msg $version_arg
-msg $version
-git push origin ${version}
 read -n1 -p "Are you publish ${version} to npm? (Y/n): " yn
 if [[ $yn = Y ]]; then
   npm publish
+  git push origin ${version}
+  git push origin master
 else
-  mgs "Publication is canceled."
-  git push --delete origin $version
+  msg "Publication is canceled."
   cleanup
 fi
