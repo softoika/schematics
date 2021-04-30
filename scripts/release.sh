@@ -67,11 +67,12 @@ npm test
 version=$(npm version $version_arg)
 msg $version_arg
 msg $version
-# git push origin v${version}
+git push origin ${version}
 read -n1 -p "Are you publish ${version} to npm? (Y/n): " yn
 if [[ $yn = Y ]]; then
-  msg "npm publish ${version}"
+  npm publish
 else
   mgs "Publication is canceled."
+  git push --delete origin $version
   cleanup
 fi
