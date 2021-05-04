@@ -1,7 +1,6 @@
 {
-  "extends": ["config:base"],
+  "extends": ["config:base", "schedule:monthly"],
   "timezone": "Asia/Tokyo",
-  "schedule": ["after 7am and before 8am on saturday"],
   "automerge": true,
   "major": { "automerge": false },
   "packageRules": [
