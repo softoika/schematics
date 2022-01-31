@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/core@11.2.17":
-  version "11.2.17"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-11.2.17.tgz#4e0281b2e15c4c738775ded8f4abdf42e8518578"
-  integrity sha512-ytIgRbzObqUhlGBVDOrJ+DGntFecQZGSFa/Tm5AtlNoi+To3a5jmTLUapJfbX+3pblFYQ6R6kfyjt1c7NCdinQ==
+"@angular-devkit/core@11.2.18":
+  version "11.2.18"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-11.2.18.tgz#997ae8dbf643bf2abb88d6509f9ef51300df6f35"
+  integrity sha512-w7llSJfLg9/+Qb7kvFIZeUomt2kopt1Ujh6nsm/JGEoZWB6Ay63gtuj/IU/0i96Hw4UWkk6Oe7wKSKuDNMIO/w==
   dependencies:
     ajv "6.12.6"
     fast-json-stable-stringify "2.1.0"
@@ -13,12 +13,12 @@
     rxjs "6.6.3"
     source-map "0.7.3"
 
-"@angular-devkit/schematics@11.2.17":
-  version "11.2.17"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-11.2.17.tgz#a26111a64208e3b2720f15a37746d71e56be72a8"
-  integrity sha512-EZ7tz3kypja91uR+SIOHswTofQgcwOpvqnapMw9QuKjJmTDdnTkZv3n5pSClidIcYBuioOw6bybjRZvCqhWrSQ==
+"@angular-devkit/schematics@11.2.18":
+  version "11.2.18"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-11.2.18.tgz#4be257d187afcec32d81164b610830c74ce2278a"
+  integrity sha512-MqqW/Ef1wp6yrdHEWSCWegjIBIQA9BblQ4eP6urjNaGnLRRawIrVJtzZQTcEgwIWJTbr0vIXJOdgKSIsqgPVTg==
   dependencies:
-    "@angular-devkit/core" "11.2.17"
+    "@angular-devkit/core" "11.2.18"
     ora "5.3.0"
     rxjs "6.6.3"
 
@@ -667,13 +667,13 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
-"@schematics/angular@11.2.17":
-  version "11.2.17"
-  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-11.2.17.tgz#fe63be67dda96a1c7aefb605df0f873d66006ec5"
-  integrity sha512-Ras98MHiFmbxz8eTB49UOMqR/105/w1Yd42HtKHvZS7OLp5yw5gJXewoTiOz/cWBPgjl/3ltkfmM6TcusrqRhA==
+"@schematics/angular@11.2.18":
+  version "11.2.18"
+  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-11.2.18.tgz#8f899ce027f62396904367893c2dc6b52d851f09"
+  integrity sha512-i1cTkpLzXmm9/lD6jaBW5fJe0eDNjr7ie+0/cCsNVuYEIs71j1y3n/iezlBifeQr83/odDniG/k75GQX410xrA==
   dependencies:
-    "@angular-devkit/core" "11.2.17"
-    "@angular-devkit/schematics" "11.2.17"
+    "@angular-devkit/core" "11.2.18"
+    "@angular-devkit/schematics" "11.2.18"
     jsonc-parser "3.0.0"
 
 "@sinonjs/commons@^1.7.0":
