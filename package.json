@@ -39,7 +39,7 @@
     "jest": "26.6.3",
     "prettier": "2.7.1",
     "ts-jest": "26.5.6",
-    "typescript": "4.8.2"
+    "typescript": "4.9.5"
   },
   "homepage": "https://github.com/softoika/schematics",
   "repository": {
