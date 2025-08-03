@@ -26,7 +26,7 @@
     "@schematics/angular": "11.2.19"
   },
   "devDependencies": {
-    "@types/jest": "26.0.24",
+    "@types/jest": "30.0.0",
     "@types/node": "8.10.66",
     "@typescript-eslint/eslint-plugin": "4.33.0",
     "@typescript-eslint/parser": "4.33.0",
@@ -36,9 +36,9 @@
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-jest": "23.20.0",
     "eslint-plugin-prettier": "3.4.1",
-    "jest": "26.6.3",
+    "jest": "30.0.5",
     "prettier": "2.8.8",
-    "ts-jest": "26.5.6",
+    "ts-jest": "29.4.1",
     "typescript": "4.9.5"
   },
   "homepage": "https://github.com/softoika/schematics",
