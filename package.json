@@ -21,9 +21,9 @@
     "dist/**/*"
   ],
   "dependencies": {
-    "@angular-devkit/core": "11.2.19",
-    "@angular-devkit/schematics": "11.2.19",
-    "@schematics/angular": "11.2.19"
+    "@angular-devkit/core": "20.1.6",
+    "@angular-devkit/schematics": "20.1.6",
+    "@schematics/angular": "20.1.6"
   },
   "devDependencies": {
     "@types/jest": "26.0.24",
